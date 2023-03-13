@@ -1,0 +1,72 @@
+/* 1) Brainstorming en grupo para ver que spinners hacer (CSS animations, animate JS nativo, AnimeJS/Motion)
+2) Crear animaciones (minimo 2...)  HTML/CSS + JS
+3) Componente <loader-spinner>
+ */
+
+.spinner1 {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  position: relative;
+}
+
+.spinner1 div {
+  width: 120px;
+  height: 120px;
+  display: block;
+  position: absolute;
+  margin: 7px;
+  border-radius: 50%;
+  border: 8px solid crimson;
+  /* stylelint-disable-next-line shorthand-property-no-redundant-values */
+  border-color:crimson transparent transparent transparent;
+  animation: spinner1 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinner1 div:nth-child(1) {
+  animation-delay: -0.15s;
+}
+
+.spinner1 div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.spinner1 div:nth-child(3) {
+  animation-delay: -0.45s;
+}
+
+@keyframes spinner1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner2 {
+  width: 0%;
+  height: 0%;
+  display: inline-block;
+  position: relative;
+  border: 100px solid aquamarine;
+  border-color:aquamarine transparent;
+  border-radius: 50%;
+  animation: spinner2 2s ease-in-out infinite;
+}
+
+@keyframes spinner2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(720deg);
+  }
+
+  100% {
+    transform: rotate(1800deg);
+  }
+
+}
